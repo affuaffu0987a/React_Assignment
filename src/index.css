@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: rgb(232, 234, 236);
+  --color-text: rgb(0, 26, 51);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--color-text);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #FF3D00;
+  width: 3px;
+  height: 24px;
+  transform: translateX(-50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Responsive */
+
+@media(max-width:915px) {
+  .Home-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .search {
+    width: 50%;
+  }
+
+  .movie-contain {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .singleshow {
+    width: 100%;
+  }
+
+  .singleshow-contain {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+
+  .ticket-form {
+    width: 100%;
+    padding: 5px 2px;
+  }
+}
